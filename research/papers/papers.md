@@ -1,0 +1,1 @@
+[Control Operators, the SECD-machine, and the lambda-calculus](https://archive.org/details/formaldescriptio0000ifip_r3x2/page/192/mode/2up). Background on CEK machine, just taking a quick look at this and not trying to understand everything extremely deeply, but looking to get the broad strokes so I can understand the grammar in AAM 2. 
