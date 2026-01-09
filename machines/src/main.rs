@@ -2,9 +2,10 @@ mod app;
 mod ck_machine {
     pub mod ck;
 }
-mod cek_machine {
-    pub mod cek;
+mod cesk_machine {
+    pub mod cesk;
 }
+
 mod ui;
 
 use std::{io, time::Duration};

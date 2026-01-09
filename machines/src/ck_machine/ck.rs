@@ -2,6 +2,7 @@ use std::fmt;
 
 #[derive(Clone, Debug, PartialEq, Eq)]
 #[allow(dead_code)]
+
 pub enum Expression {
     /*
        <expr> ::= <variable>
@@ -75,6 +76,9 @@ pub struct MachineState {
 }
 impl MachineState {
     pub fn stack_lines(&self) -> Vec<String> {
+        if self.continuation_stack.is_empty() {
+            return vec!["∅".to_string()];
+        }
         self.continuation_stack
             .iter()
             .rev()
@@ -90,7 +94,6 @@ impl Default for MachineState {
         }
     }
 }
-
 pub enum MachineStep {
     Continue(MachineState),
     Done(Expression),
@@ -308,7 +311,7 @@ mod tests {
 
     /*
     testing constant function applied twice
-        (((λx.λy.x)5) 6) -> 5
+        (((λx.λy.x) 5) 6) -> 5
     */
     #[test]
     fn test_ck_2() {
